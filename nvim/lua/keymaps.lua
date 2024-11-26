@@ -48,4 +48,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_user_command(
+  'GReplace',
+  function()
+    local find = vim.fn.input("Find: ")         -- Prompt for the text to find
+    local replace = vim.fn.input("Replace with: ") -- Prompt for the replacement text
+    if find ~= "" then
+      vim.cmd(":%s/" .. find .. "/" .. replace .. "/g") -- Perform the replacement with global flag
+    else
+      print("No text to find provided.")
+    end
+  end,
+  { desc = "Global find and replace with prompts" }
+)
+
+-- Bind it to a key combination, like <leader>r
+vim.keymap.set('n', '<leader>r', function()
+  vim.cmd('GReplace')  -- Prompt the user to input the arguments after pressing <leader>r
+end, { desc = "Global find and replace" })
 -- vim: ts=2 sts=2 sw=2 et
