@@ -13,7 +13,14 @@ function synchronize
 		return
 	end
 
-	set --local vault "/home/heart-of-gold/obsidian-vault/"
+	set --local machine $hostname
+	set --local vault ""
+	if [ $machine = "pigna" ]
+		set vault "/home/heart-of-gold/obsidian-vault/"
+	else
+		set vault "/home/heartofgold/obsidian-vault/"
+	end
+	echo $vault
 
 	if [ (pwd) != $vault ]
 		echo "Moving to the vault -- $vault"
@@ -23,7 +30,7 @@ function synchronize
 	if set --query _flag_upload
 		# Pushing to master
 		git add .
-		git commit -m "Synchronization for machine: $hostname"
+		git commit -m "Synchronization for machine: $machine"
 		git push
 	end
 
