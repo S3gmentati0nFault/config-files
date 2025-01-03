@@ -13,6 +13,7 @@ function synchronize
 		return
 	end
 
+	set --local current (pwd)
 	set --local machine $hostname
 	set --local vault ""
 	if [ $machine = "pigna" ]
@@ -37,5 +38,7 @@ function synchronize
 	if set --query _flag_download
 		# Pulling from source
 		git pull
+
+	cd $current
 	end
 end
