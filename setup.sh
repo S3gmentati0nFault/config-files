@@ -43,6 +43,9 @@ sudo $PMANAGER install build-essential
 flatpak install wezterm
 cp $CONFIGS/wezterm $LOCAL/
 
+# Okular
+sudo $PMANAGER install okular
+
 
 # Copy the obsidian directory
 synchronize -d
