@@ -3,6 +3,7 @@ function synchronize
 	# Set the function's flags
 	set --local options 'h/help' 'u/upload' 'd/download'
 	argparse $options -- $argv
+
 	
 	if set --query _flag_help
 		printf "Usage: synchronize [-h -u -d]\n\n"
@@ -15,12 +16,15 @@ function synchronize
 
 	set --local current (pwd)
 	set --local machine $hostname
-	set --local vault ""
-	if [ $machine = "pigna" ]
-		set vault "/home/heart-of-gold/obsidian-vault/"
-	else
-		set vault "/home/heartofgold/obsidian-vault/"
+	set --local user (id -un)
+
+	if test ! -d /home/$user/obsidian-vault
+		echo "The folder does not exist"
+		cd /home/$user
+		git clone git@github.com:S3gmentati0nFault/obsidian-vault.git
 	end
+
+	set --local vault "/home/$user/obsidian-vault"
 	echo $vault
 
 	if [ (pwd) != $vault ]
