@@ -18,12 +18,12 @@ function update
 	set --local home "/home/$user"
 	
 	if set --query _flag_repo
-		cp -rf "$home/.config/fish/functions/" "$home/Projects/config-files/fish/"
+		cp -rf "$home/.config/fish/functions" "$home/Projects/config-files/fish/"
 		cp -rf "$home/.config/nvim/" "$home/Projects/config-files/"
 	end
 
 	if set --query _flag_local
-		cp -rf "$home/Projects/config-files/fish/functions/" "$home/.config/fish/"
+		cp -rf "$home/Projects/config-files/fish/functions" "$home/.config/fish/"
 		cp -rf "$home/Projects/config-files/nvim/" "$home/.config/"
 	end
 end
