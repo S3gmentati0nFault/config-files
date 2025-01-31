@@ -29,6 +29,10 @@ exec --no-startup-id dex --autostart --environment i3
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# Polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh --shapes &
+# Background
+exec feh --bg-center /home/heart-of-gold/Pictures/Wallpapers/wallpaperflare.com_wallpaper.jpg
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -44,16 +48,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
 # kill focused window
 bindsym $mod+q kill
-
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
-# A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -105,8 +103,6 @@ bindsym $mod+t focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# Rofi startup
-bindsym $mod+space exec rofi -show run
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -184,6 +180,37 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+#bar {
+#    font pango:DejaVu Sans Mono, FontAwesome 12
+#    position top
+#    status_command ~/.cargo/bin/i3status-rs path/to/your/config.toml
+#    colors {
+#        separator #666666
+#        background #222222
+#        statusline #dddddd
+#        focused_workspace #0088CC #0088CC #ffffff
+#        active_workspace #333333 #333333 #ffffff
+#        inactive_workspace #333333 #333333 #888888
+#        urgent_workspace #2f343a #900000 #ffffff
+#    }
+#}
+
+
+# configuration
+for_window [class="^.*"] border pixel 1
+
+
+
+
+
+
+
+# Rofi startup
+bindsym $mod+space exec "rofi -modi drun,run -show drun"
+
+# start a terminal
+bindsym $mod+Return exec flatpak run org.wezfurlong.wezterm
+
+# Take a screenshot
+bindsym $mod+Shift+s exec maim -s -u | xclip -selection clipboard -t image/png -i
+
