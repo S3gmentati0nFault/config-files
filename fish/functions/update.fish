@@ -34,6 +34,6 @@ function update
 		echo "$file --> $fish/$base"
 		ln -s $file $fish/$base
 	end
-	ln -s $dotfiles/wezterm/wezterm.lua $wezterm/wezterm.lua
+	ln -s $dotfiles/wezterm.lua $wezterm/wezterm.lua
 	echo "...done"
 end
