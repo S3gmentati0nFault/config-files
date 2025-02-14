@@ -3,9 +3,9 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 --config.color_scheme = "AdventureTime"
-config.font = wezterm.font("Agave Nerd Font Mono", { weight = "Regular" })
+config.font = wezterm.font("Agave Nerd Font", { weight = "Bold" })
 config.font_size = 12.0
-config.line_height = 1.5
+config.line_height = 2
 
 config.colors = {
 	-- The default text color
