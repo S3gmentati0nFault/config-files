@@ -1,7 +1,8 @@
 function update
 
 	# Variables
-	set --local home /home/heartofgold
+	set --local user (id -u -n)
+	set --local home /home/$user
 	set --local wezterm $home/.config/wezterm
 	set --local fish $home/.config/fish/functions
 	set --local backup $home/.config/dotbackup
