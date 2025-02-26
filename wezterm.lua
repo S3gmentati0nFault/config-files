@@ -35,23 +35,39 @@ config.colors = {
 	split = "#c996ff",
 
 	ansi = {
+		-- black
 		"black",
+		-- green
 		"#ff7a7a",
+		-- red
 		"#74f7b6",
-		"olive",
+		-- yellow
+		"#edff78",
+		--
 		"#60b1fc",
+		-- purple
 		"purple",
+		-- light blue
 		"teal",
-		"silver",
+		-- white (pink)
+		"#efbfff",
 	},
 	brights = {
+		-- black
 		"grey",
+		-- green
 		"#e03434",
+		-- red
 		"#00ba5d",
-		"yellow",
+		-- yellow
+		"#ffc30f",
+		--
 		"#0084ff",
+		-- fuchsia
 		"fuchsia",
+		-- light blue
 		"aqua",
+		-- white
 		"white",
 	},
 
