@@ -14,7 +14,7 @@ function lcompile
 	end
 
 	if set --query _flag_bibliography
-		latexmk "$argv.tex"
+		pdflatex "$argv.tex" && biber $argv && pdflatex "$argv.tex" && pdflatex "$argv.tex"
 		return
 	end
 
