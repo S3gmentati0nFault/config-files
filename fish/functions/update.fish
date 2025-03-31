@@ -7,6 +7,8 @@ function update
 	set --local fish $home/.config/fish/functions
 	set --local backup $home/.config/dotbackup
 	set --local dotfiles $home/Projects/config-files
+	set --local wm $home/.config/i3
+	set --local poly $home/.config/polybar/shapes
 
 	# Create the old dotfiles dir
 	echo "Generating the DOTBACKUP folder"
@@ -27,8 +29,19 @@ function update
 	mv -f "$wezterm/wezterm.lua" "$backup/wezterm.lua"
 	echo "...done"
 
-	# Symlink every file in the fish functions directory and add the symlink to the wezterm
-	# configuration file
+	# Copy the old polybar configuration to the backup folder
+	echo "Moving the polybar configuration to backup"
+	mv -f "$poly/modules.ini" "$backup/modules.ini"
+	mv -f "$poly/user_modules.ini" "$backup/user_modules.ini"
+	echo "...done"
+
+	# Copy the old configuration of i3 to the backup folder
+	echo "Moving the i3 configuration to backup"
+	mv -f "$wm/config" "$backup/i3/config"
+	echo "...done"
+
+	# Symlink every file in the fish functions directory and add the symlink to the wezterm and
+	# i3 configuration file
 	for file in $dotfiles/fish/functions/*
 		echo "Moving all the fish functions from the dotfiles dir to the config function"
 		set --local base (basename $file)
@@ -36,5 +49,8 @@ function update
 		ln -s $file $fish/$base
 	end
 	ln -s $dotfiles/wezterm.lua $wezterm/wezterm.lua
+	ln -s $dotfiles/i3/config $wm/config
+	ln -s $dotfiles/polybar/modules.ini $poly/modules.ini
+	ln -s $dotfiles/polybar/user_modules.ini $poly/user_modules.ini
 	echo "...done"
 end
