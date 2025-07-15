@@ -14,7 +14,7 @@ function debug {
 }
 
 function cmemcheck {
-	leaks -atExit -- $1 | grep LEAK:
+	leaks -atExit -- ./$1
 }
 
 export PATH=$PATH:/Users/heart-of-gold/Library/Python/3.9/bin
