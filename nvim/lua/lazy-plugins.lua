@@ -56,7 +56,13 @@ require("lazy").setup({
 
 	require("/plugins/vimspector"),
 
-	--require("/plugins/nvim_surround"),
+	require("/plugins/multicursor"),
+
+	require("/plugins/devicons"),
+
+	require("/plugins/barbar"),
+
+	require("/plugins/explorer"),
 
 	-- The following two comments only work if you have downloaded the  repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
