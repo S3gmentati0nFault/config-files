@@ -65,4 +65,6 @@ end, { desc = "Global find and replace" })
 
 -- Nvim-tree commands
 vim.keymap.set("n", "<C-b>", ":NvimTreeOpen<cr>")
--- vim: ts=2 sts=2 sw=2 et
+
+-- Tagbar toggle
+vim.keymap.set("n", "<C-t>", ":TagbarToggle<cr>")
