@@ -140,7 +140,11 @@ return {
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
 				texlab = {},
-				clangd = {},
+				clangd = {
+					init_options = {
+						fallbackFlags = { "--std=c++20" },
+					},
+				},
 				-- gopls = {},
 				pyright = {},
 				-- rust_analyzer = {},
