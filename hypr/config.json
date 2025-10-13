@@ -1,0 +1,58 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "media",
+        "cpu",
+        "cputemp",
+        "ram"
+      ],
+      "middle": [],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "clock",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "media",
+        "cpu",
+        "cputemp",
+        "ram"
+      ],
+      "middle": [],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "bar.customModules.cpuTemp.sensor": "/sys/devices/platform/thinkpad_hwmon/hwmon/hwmon4/temp1_input",
+  "bar.customModules.worldclock.format": "%I:%M %p %Z",
+  "menus.dashboard.stats.enable_gpu": false,
+  "menus.dashboard.stats.enabled": false,
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "󰇩",
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Firefox",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "firefox",
+  "menus.dashboard.controls.enabled": true,
+  "menus.clock.time.military": false,
+  "menus.clock.time.hideSeconds": true,
+  "menus.clock.weather.location": "Milan",
+  "menus.clock.weather.unit": "metric",
+  "menus.clock.weather.enabled": false
+}
