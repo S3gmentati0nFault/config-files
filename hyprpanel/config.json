@@ -12,7 +12,9 @@
         "cputemp",
         "ram"
       ],
-      "middle": [],
+      "middle": [
+        "systray"
+      ],
       "right": [
         "volume",
         "network",
