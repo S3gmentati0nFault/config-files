@@ -33,7 +33,30 @@
         "cputemp",
         "ram"
       ],
-      "middle": [],
+      "middle": [
+        "systray"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "clock",
+        "notifications"
+      ]
+    },
+    "2": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "media",
+        "cpu",
+        "cputemp",
+        "ram"
+      ],
+      "middle": [
+        "systray"
+      ],
       "right": [
         "volume",
         "network",
